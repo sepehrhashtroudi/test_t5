@@ -1,5 +1,5 @@
-WORKDIR="your_CodeT5_path/CodeT5"
-export PYTHONPATH=$WORKDIR
+WORKDIR="../"
+# export PYTHONPATH=$WORKDIR
 
 TASK=${1}
 SUB_TASK=${2}
@@ -62,8 +62,8 @@ elif [[ $MODEL_TAG == codet5_small ]]; then
   MODEL_PATH=Salesforce/codet5-small
 elif [[ $MODEL_TAG == codet5_base ]]; then
   MODEL_TYPE=codet5
-  TOKENIZER=Salesforce/codet5-base
-  MODEL_PATH=Salesforce/codet5-base
+  TOKENIZER=../pretrained_models/codet5-base/
+  MODEL_PATH=../pretrained_models/codet5-base/
 elif [[ $MODEL_TAG == codet5_large ]]; then
   MODEL_TYPE=codet5
   TOKENIZER=Salesforce/codet5-large
