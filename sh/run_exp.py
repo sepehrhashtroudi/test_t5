@@ -53,7 +53,7 @@ def get_args_by_task_model(task, sub_task, model_tag):
         # [TOKENIZE] avg src len: 213, avg trg len: 33, max src len: 2246, max trg len: 264
         src_len = 320
         trg_len = 150
-        epoch = 30
+        epoch = 20
         patience = 3
     elif task == 'defect':
         # Read 21854 examples, avg src len: 187, avg trg len: 1, max src len: 12195, max trg len: 1
@@ -151,7 +151,7 @@ if __name__ == '__main__':
     parser.add_argument("--res_dir", type=str, default='results', help='directory to save fine-tuning results')
     parser.add_argument("--model_dir", type=str, default='saved_models', help='directory to save fine-tuned models')
     parser.add_argument("--summary_dir", type=str, default='tensorboard', help='directory to save tensorboard summary')
-    parser.add_argument("--data_num", type=int, default=1000, help='number of data instances to use, -1 for full data')
+    parser.add_argument("--data_num", type=int, default=-1, help='number of data instances to use, -1 for full data')
     parser.add_argument("--gpu", type=str, default="0,1,2,3", help='index of the gpu to use in a cluster')
     args = parser.parse_args()
 
