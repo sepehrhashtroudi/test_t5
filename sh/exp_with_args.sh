@@ -1,5 +1,5 @@
-WORKDIR="../"
-# export PYTHONPATH=$WORKDIR
+WORKDIR=".."
+export PYTHONPATH=$WORKDIR
 
 TASK=${1}
 SUB_TASK=${2}

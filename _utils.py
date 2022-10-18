@@ -213,21 +213,41 @@ def read_refine_examples(filename, data_num):
 def read_concode_examples(filename, data_num):
     """Read examples from filename."""
     examples = []
-
-    with open(filename) as f:
-        for idx, line in enumerate(f):
-            x = json.loads(line)
+    assert len(filename.split(',')) == 2
+    src_filename = filename.split(',')[0]
+    trg_filename = filename.split(',')[1]
+    idx = 0
+    with open(src_filename) as f1, open(trg_filename) as f2:
+        for line1, line2 in zip(f1, f2):
+            src = line1.strip()
+            trg = line2.strip()
             examples.append(
                 Example(
                     idx=idx,
-                    source=x["nl"].strip(),
-                    target=x["code"].strip()
+                    source=src,
+                    target=trg,
                 )
             )
             idx += 1
             if idx == data_num:
                 break
     return examples
+    
+    # examples = []
+    # with open(filename) as f:
+    #     for idx, line in enumerate(f):
+    #         x = json.loads(line)
+    #         examples.append(
+    #             Example(
+    #                 idx=idx,
+    #                 source=x["nl"].strip(),
+    #                 target=x["code"].strip()
+    #             )
+    #         )
+    #         idx += 1
+    #         if idx == data_num:
+    #             break
+    # return examples
 
 
 def read_summarize_examples(filename, data_num):

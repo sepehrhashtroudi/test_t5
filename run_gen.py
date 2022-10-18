@@ -40,6 +40,11 @@ from evaluator.bleu import _bleu
 from utils import get_filenames, get_elapse_time, load_and_cache_gen_data
 from configs import add_args, set_seed, set_dist
 
+from torch.nn.parallel import DistributedDataParallel as DDP
+import torch.distributed as dist
+import torch.multiprocessing as mp
+
+
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
                     datefmt='%m/%d/%Y %H:%M:%S',
                     level=logging.INFO)
@@ -71,7 +76,8 @@ def eval_ppl_epoch(args, eval_data, eval_examples, model, tokenizer):
                 outputs = model(input_ids=source_ids, attention_mask=source_mask,
                                 labels=target_ids, decoder_attention_mask=target_mask)
                 loss = outputs.loss
-
+        if args.n_gpu > 1:
+            loss = loss.mean()  # mean() to average on multi-gpu.
         eval_loss += loss.item()
         batch_num += 1
     eval_loss = eval_loss / batch_num
@@ -102,12 +108,20 @@ def eval_bleu_epoch(args, eval_data, eval_examples, model, tokenizer, split_tag,
 
                 top_preds = [pred[0].cpu().numpy() for pred in preds]
             else:
-                preds = model.generate(source_ids,
-                                       attention_mask=source_mask,
-                                       use_cache=True,
-                                       num_beams=args.beam_size,
-                                       early_stopping=args.task == 'summarize',
-                                       max_length=args.max_target_length)
+                if args.n_gpu > 1:
+                    preds = model.module.generate(source_ids,
+                                        attention_mask=source_mask,
+                                        use_cache=True,
+                                        num_beams=args.beam_size,
+                                        early_stopping=args.task == 'summarize',
+                                        max_length=args.max_target_length)
+                else:
+                    preds = model.generate(source_ids,
+                                        attention_mask=source_mask,
+                                        use_cache=True,
+                                        num_beams=args.beam_size,
+                                        early_stopping=args.task == 'summarize',
+                                        max_length=args.max_target_length)
                 top_preds = list(preds.cpu().numpy())
             pred_ids.extend(top_preds)
 
@@ -236,9 +250,13 @@ def main():
                     loss = outputs.loss
 
                 if args.n_gpu > 1:
+                    # logger.info("sssssssssssssssssssssssssssssssssss")
+                    # logger.info("sssssssssssssssssssssssssssssssssss")
+                    # logger.info("sssssssssssssssssssssssssssssssssss")
                     loss = loss.mean()  # mean() to average on multi-gpu.
                 if args.gradient_accumulation_steps > 1:
                     loss = loss / args.gradient_accumulation_steps
+                
                 tr_loss += loss.item()
 
                 nb_tr_examples += source_ids.size(0)

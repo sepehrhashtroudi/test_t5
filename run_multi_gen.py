@@ -190,7 +190,7 @@ def main():
     model.to(args.device)
     if args.n_gpu > 1:
         # for DataParallel
-        model = torch.nn.DataParallel(model)
+        model = torch.nn.parallel.DistributedDataParallel(model)
     pool = multiprocessing.Pool(args.cpu_cont)
     fa = open(os.path.join(args.output_dir, 'summary.log'), 'a+')
 
