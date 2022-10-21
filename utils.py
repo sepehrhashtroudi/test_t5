@@ -171,10 +171,10 @@ def load_and_cache_multi_gen_data(args, pool, tokenizer, split_tag, only_src=Fal
 
 def get_filenames(data_root, task, sub_task, split=''):
     if task == 'concode':
-        data_dir = '{}/{}'.format(data_root, task)
-        train_fn = '{}/train.methods,{}/train.tests'.format(data_dir, data_dir)
-        dev_fn = '{}/test.methods,{}/test.tests'.format(data_dir, data_dir)
-        test_fn = '{}/test.methods,{}/test.tests'.format(data_dir, data_dir)
+        data_dir = '{}/{}'.format(data_root, "methods2test/corpus/raw/fm_fc_ms_ff")
+        train_fn = '{}/train/input.methods.txt,{}/train/output.tests.txt'.format(data_dir, data_dir)
+        dev_fn = '{}/eval/input.methods.txt,{}/eval/output.tests.txt'.format(data_dir, data_dir)
+        test_fn = '{}/test/input.methods.txt,{}/test/output.tests.txt'.format(data_dir, data_dir)
         # data_dir = '{}/{}'.format(data_root, task)
         # train_fn = '{}/train.json'.format(data_dir)
         # dev_fn = '{}/dev.json'.format(data_dir)
@@ -193,15 +193,19 @@ def get_filenames(data_root, task, sub_task, split=''):
         dev_fn = '{}/valid.buggy-fixed.buggy,{}/valid.buggy-fixed.fixed'.format(data_dir, data_dir)
         test_fn = '{}/test.buggy-fixed.buggy,{}/test.buggy-fixed.fixed'.format(data_dir, data_dir)
     elif task == 'translate':
-        data_dir = '{}/{}'.format(data_root, task)
-        if sub_task == 'cs-java':
-            train_fn = '{}/train.java-cs.txt.cs,{}/train.java-cs.txt.java'.format(data_dir, data_dir)
-            dev_fn = '{}/valid.java-cs.txt.cs,{}/valid.java-cs.txt.java'.format(data_dir, data_dir)
-            test_fn = '{}/test.java-cs.txt.cs,{}/test.java-cs.txt.java'.format(data_dir, data_dir)
-        else:
-            train_fn = '{}/train.java-cs.txt.java,{}/train.java-cs.txt.cs'.format(data_dir, data_dir)
-            dev_fn = '{}/valid.java-cs.txt.java,{}/valid.java-cs.txt.cs'.format(data_dir, data_dir)
-            test_fn = '{}/test.java-cs.txt.java,{}/test.java-cs.txt.cs'.format(data_dir, data_dir)
+        data_dir = '{}/{}'.format(data_root, "methods2test/corpus/raw/fm_fc_ms_ff")
+        train_fn = '{}/train/input.methods.txt,{}/train/output.tests.txt'.format(data_dir, data_dir)
+        dev_fn = '{}/eval/input.methods.txt,{}/eval/output.tests.txt'.format(data_dir, data_dir)
+        test_fn = '{}/test/input.methods.txt,{}/test/output.tests.txt'.format(data_dir, data_dir)
+        # data_dir = '{}/{}'.format(data_root, task)
+        # if sub_task == 'cs-java':
+        #     train_fn = '{}/train.java-cs.txt.cs,{}/train.java-cs.txt.java'.format(data_dir, data_dir)
+        #     dev_fn = '{}/valid.java-cs.txt.cs,{}/valid.java-cs.txt.java'.format(data_dir, data_dir)
+        #     test_fn = '{}/test.java-cs.txt.cs,{}/test.java-cs.txt.java'.format(data_dir, data_dir)
+        # else:
+        #     train_fn = '{}/train.java-cs.txt.java,{}/train.java-cs.txt.cs'.format(data_dir, data_dir)
+        #     dev_fn = '{}/valid.java-cs.txt.java,{}/valid.java-cs.txt.cs'.format(data_dir, data_dir)
+        #     test_fn = '{}/test.java-cs.txt.java,{}/test.java-cs.txt.cs'.format(data_dir, data_dir)
     elif task == 'clone':
         data_dir = '{}/{}'.format(data_root, task)
         train_fn = '{}/train.txt'.format(data_dir)

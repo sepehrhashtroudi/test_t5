@@ -24,10 +24,12 @@ else
   EPOCH=1
 fi
 
+DATE=$(date +%Y-%m-%d)
+
 if [[ ${TASK} == 'multi_task' ]]; then
-  FULL_MODEL_TAG=${MODEL_TAG}_${DATA_TAG}_lr${LR}_s${16}
+  FULL_MODEL_TAG=${MODEL_TAG}_${DATA_TAG}_lr${LR}_s${16}_date:${DATE}
 else
-  FULL_MODEL_TAG=${MODEL_TAG}_${DATA_TAG}_lr${LR}_bs${BS}_src${SRC_LEN}_trg${TRG_LEN}_pat${PATIENCE}_e${EPOCH}
+  FULL_MODEL_TAG=${MODEL_TAG}_${DATA_TAG}_lr${LR}_bs${BS}_src${SRC_LEN}_trg${TRG_LEN}_pat${PATIENCE}_e${EPOCH}_date:${DATE}
 fi
 
 
@@ -83,8 +85,8 @@ else
 fi
 
 CUDA_VISIBLE_DEVICES=${GPU} \
-  python ${RUN_FN}  ${MULTI_TASK_AUG}   \
-  --do_train --do_eval --do_eval_bleu --do_test  \
+  python ${RUN_FN}  ${MULTI_TASK_AUG}  \
+  --do_train --do_eval --do_eval_bleu \
   --task ${TASK} --sub_task ${SUB_TASK} --model_type ${MODEL_TYPE} --data_num ${DATA_NUM}  \
   --num_train_epochs ${EPOCH} --warmup_steps ${WARMUP} --learning_rate ${LR}e-5 --patience ${PATIENCE} \
   --tokenizer_name=${TOKENIZER}  --model_name_or_path=${MODEL_PATH} --data_dir ${WORKDIR}/data  \
