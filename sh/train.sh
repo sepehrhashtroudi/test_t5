@@ -7,6 +7,6 @@
 source ../ENV_T5/bin/activate 
 module load python/3.9.6
 
-# python run_exp.py --model_tag codet5_base --task concode --sub_task none
+python run_exp.py --model_tag codet5_base --task concode --sub_task none
 
-python run_exp.py --model_tag codet5_base --task translate --sub_task cs-java
+# python run_exp.py --model_tag codet5_base --task translate --sub_task cs-java

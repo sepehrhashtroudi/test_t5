@@ -40,9 +40,6 @@ from evaluator.bleu import _bleu
 from utils import get_filenames, get_elapse_time, load_and_cache_gen_data
 from configs import add_args, set_seed, set_dist
 
-from torch.nn.parallel import DistributedDataParallel as DDP
-import torch.distributed as dist
-import torch.multiprocessing as mp
 
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
