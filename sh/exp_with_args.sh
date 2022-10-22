@@ -68,8 +68,8 @@ elif [[ $MODEL_TAG == codet5_base ]]; then
   MODEL_PATH=../pretrained_models/codet5-base/
 elif [[ $MODEL_TAG == codet5_large ]]; then
   MODEL_TYPE=codet5
-  TOKENIZER=Salesforce/codet5-large
-  MODEL_PATH=Salesforce/codet5-large
+  TOKENIZER=./codegen-16B-multi/
+  MODEL_PATH=./codegen-16B-multi/
 fi
 
 
