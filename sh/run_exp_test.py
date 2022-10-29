@@ -6,11 +6,11 @@ import argparse
 def get_cmd(task, sub_task, model_tag, gpu, data_num, bs, lr, source_length, target_length, patience, epoch, warmup,
             model_dir, summary_dir, res_fn, max_steps=None, save_steps=None, log_steps=None):
     if max_steps is None:
-        cmd_str = 'bash exp_with_args.sh %s %s %s %s %d %d %d %d %d %d %d %d %s %s %s' % \
+        cmd_str = 'bash exp_with_args_test.sh %s %s %s %s %d %d %d %d %d %d %d %d %s %s %s' % \
                   (task, sub_task, model_tag, gpu, data_num, bs, lr, source_length, target_length, patience, epoch,
                    warmup, model_dir, summary_dir, res_fn)
     else:
-        cmd_str = 'bash exp_with_args.sh %s %s %s %s %d %d %d %d %d %d %d %d %s %s %s %d %d %d' % \
+        cmd_str = 'bash exp_with_args_test.sh %s %s %s %s %d %d %d %d %d %d %d %d %s %s %s %d %d %d' % \
                   (task, sub_task, model_tag, gpu, data_num, bs, lr, source_length, target_length, patience, epoch,
                    warmup, model_dir, summary_dir, res_fn, max_steps, save_steps, log_steps)
     return cmd_str
@@ -52,7 +52,7 @@ def get_args_by_task_model(task, sub_task, model_tag):
         # Read 100000 examples, avg src len: 71, avg trg len: 26, max src len: 567, max trg len: 140
         # [TOKENIZE] avg src len: 213, avg trg len: 33, max src len: 2246, max trg len: 264
         src_len = 320
-        trg_len = 320
+        trg_len = 150
         epoch = 20
         patience = 3
     elif task == 'defect':
@@ -79,7 +79,7 @@ def get_args_by_task_model(task, sub_task, model_tag):
     elif 'codet5_large' in model_tag:
         bs = 8
     else:
-        bs = 8
+        bs = 12
         if task == 'translate':
             bs = 8
         elif task == 'summarize':

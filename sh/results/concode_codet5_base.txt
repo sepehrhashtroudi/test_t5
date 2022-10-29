@@ -2,3 +2,5 @@
 [best-bleu] bleu-4: 0.03, em: 0.0000, codebleu: 9.8286
 [Time: 22m] saved_models/concode/codet5_base_1000_lr10_bs8_src320_trg150_pat3_e1/checkpoint-best-bleu/pytorch_model.bin
 [best-bleu] bleu-4: 0.02, em: 0.0000, codebleu: 9.9426
+[Time: 27m] ./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 0.08, em: 0.0000, codebleu: 6.4519

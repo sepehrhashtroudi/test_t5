@@ -24,12 +24,12 @@ else
   EPOCH=1
 fi
 
-DATE=$(date +"%D_%T")
+DATE=$(date +%Y-%m-%d)
 
 if [[ ${TASK} == 'multi_task' ]]; then
   FULL_MODEL_TAG=${MODEL_TAG}_${DATA_TAG}_lr${LR}_s${16}_date:${DATE}
 else
-  FULL_MODEL_TAG=${MODEL_TAG}_${DATA_TAG}_lr${LR}_bs${BS}_src${SRC_LEN}_trg${TRG_LEN}_${DATE}
+  FULL_MODEL_TAG=${MODEL_TAG}_${DATA_TAG}_lr${LR}_bs${BS}_src${SRC_LEN}_trg${TRG_LEN}_pat${PATIENCE}_e${EPOCH}_date:${DATE}
 fi
 
 
@@ -64,10 +64,8 @@ elif [[ $MODEL_TAG == codet5_small ]]; then
   MODEL_PATH=Salesforce/codet5-small
 elif [[ $MODEL_TAG == codet5_base ]]; then
   MODEL_TYPE=codet5
-  # TOKENIZER=./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu
-  # MODEL_PATH=./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu
-  TOKENIZER=../pretrained_models/codet5-base
-  MODEL_PATH=../pretrained_models/codet5-base
+  TOKENIZER=./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu
+  MODEL_PATH=./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu
 elif [[ $MODEL_TAG == codet5_large ]]; then
   MODEL_TYPE=codet5
   TOKENIZER=./codegen-16B-multi/
@@ -88,7 +86,7 @@ fi
 
 CUDA_VISIBLE_DEVICES=${GPU} \
   python ${RUN_FN}  ${MULTI_TASK_AUG}  \
-  --do_train --do_eval --do_eval_bleu \
+  --do_test\
   --task ${TASK} --sub_task ${SUB_TASK} --model_type ${MODEL_TYPE} --data_num ${DATA_NUM}  \
   --num_train_epochs ${EPOCH} --warmup_steps ${WARMUP} --learning_rate ${LR}e-5 --patience ${PATIENCE} \
   --tokenizer_name=${TOKENIZER}  --model_name_or_path=${MODEL_PATH} --data_dir ${WORKDIR}/data  \
