@@ -3,3 +3,5 @@
 /ENV_T5
 /data
 /sh/saved_models
+/__pycache__
+slurm-*.out
