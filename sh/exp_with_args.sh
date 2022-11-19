@@ -64,14 +64,14 @@ elif [[ $MODEL_TAG == codet5_small ]]; then
   MODEL_PATH=Salesforce/codet5-small
 elif [[ $MODEL_TAG == codet5_base ]]; then
   MODEL_TYPE=codet5
-  # TOKENIZER=./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu
-  # MODEL_PATH=./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu
-  TOKENIZER=../pretrained_models/codet5-base
-  MODEL_PATH=../pretrained_models/codet5-base
+  TOKENIZER=./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu
+  MODEL_PATH=./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu
+  # TOKENIZER=../pretrained_models/codet5-base
+  # MODEL_PATH=../pretrained_models/codet5-base
 elif [[ $MODEL_TAG == codet5_large ]]; then
   MODEL_TYPE=codet5
-  TOKENIZER=./codegen-16B-multi/
-  MODEL_PATH=./codegen-16B-multi/
+  TOKENIZER=../pretrained_models/codet5-large
+  MODEL_PATH=../pretrained_models/codet5-large
 fi
 
 

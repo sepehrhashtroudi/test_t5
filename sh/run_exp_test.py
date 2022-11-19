@@ -51,8 +51,8 @@ def get_args_by_task_model(task, sub_task, model_tag):
     elif task == 'concode':
         # Read 100000 examples, avg src len: 71, avg trg len: 26, max src len: 567, max trg len: 140
         # [TOKENIZE] avg src len: 213, avg trg len: 33, max src len: 2246, max trg len: 264
-        src_len = 320
-        trg_len = 150
+        src_len = 500
+        trg_len = 500
         epoch = 20
         patience = 3
     elif task == 'defect':
@@ -79,7 +79,7 @@ def get_args_by_task_model(task, sub_task, model_tag):
     elif 'codet5_large' in model_tag:
         bs = 8
     else:
-        bs = 12
+        bs = 4
         if task == 'translate':
             bs = 8
         elif task == 'summarize':
