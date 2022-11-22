@@ -24,7 +24,7 @@ else
   EPOCH=1
 fi
 
-DATE=$(date +"%D_%T")
+DATE=$(date "+%d-%m-%Y_%H:%M:%S")
 
 if [[ ${TASK} == 'multi_task' ]]; then
   FULL_MODEL_TAG=${MODEL_TAG}_${DATA_TAG}_lr${LR}_s${16}_date:${DATE}
@@ -70,8 +70,8 @@ elif [[ $MODEL_TAG == codet5_base ]]; then
   MODEL_PATH=../pretrained_models/codet5-base
 elif [[ $MODEL_TAG == codet5_large ]]; then
   MODEL_TYPE=codet5
-  TOKENIZER=./codegen-16B-multi/
-  MODEL_PATH=./codegen-16B-multi/
+  TOKENIZER=../pretrained_models/codet5-large
+  MODEL_PATH=../pretrained_models/codet5-large
 fi
 
 
