@@ -172,9 +172,9 @@ def load_and_cache_multi_gen_data(args, pool, tokenizer, split_tag, only_src=Fal
 def get_filenames(data_root, task, sub_task, split=''):
     if task == 'concode':
         data_dir = '{}/{}'.format(data_root, "test_gen/")
-        train_fn = '{}/train.methods,{}/train.tests'.format(data_dir, data_dir)
-        dev_fn = '{}/test.methods,{}/test.tests'.format(data_dir, data_dir)
-        test_fn = '{}/test.methods,{}/test.tests'.format(data_dir, data_dir)
+        train_fn = '{}/cli_train.methods,{}/cli_train.tests'.format(data_dir, data_dir)
+        dev_fn = '{}/cli_test.methods,{}/cli_test.tests'.format(data_dir, data_dir)
+        test_fn = '{}/cli_test.methods,{}/cli_test.tests'.format(data_dir, data_dir)
 
         # data_dir = '{}/{}'.format(data_root, "methods2test/corpus/raw/fm_fc_ms_ff")
         # train_fn = '{}/train/input.methods.txt,{}/train/output.tests.txt'.format(data_dir, data_dir)
