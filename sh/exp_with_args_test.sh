@@ -24,7 +24,7 @@ else
   EPOCH=1
 fi
 
-DATE=$(date +%Y-%m-%d)
+DATE=$(date "+%d-%m-%Y_%H:%M:%S")
 
 if [[ ${TASK} == 'multi_task' ]]; then
   FULL_MODEL_TAG=${MODEL_TAG}_${DATA_TAG}_lr${LR}_s${16}_date:${DATE}
