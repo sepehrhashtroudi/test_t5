@@ -5,3 +5,4 @@
 /sh/saved_models
 /__pycache__
 slurm-*.out
+*.pyc
