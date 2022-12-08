@@ -171,10 +171,41 @@ def load_and_cache_multi_gen_data(args, pool, tokenizer, split_tag, only_src=Fal
 
 def get_filenames(data_root, task, sub_task, split=''):
     if task == 'concode':
+
+        # data_dir = '{}/{}'.format(data_root, "test_gen/")
+        # train_fn = '{}/codec_train.methods,{}/codec_train.tests'.format(data_dir, data_dir)
+        # dev_fn = '{}/codec_test.methods,{}/codec_test.tests'.format(data_dir, data_dir)
+        # test_fn = '{}/codec_test.methods,{}/codec_test.tests'.format(data_dir, data_dir)
+        
+        # data_dir = '{}/{}'.format(data_root, "test_gen/")
+        # train_fn = '{}/csv_train.methods,{}/csv_train.tests'.format(data_dir, data_dir)
+        # dev_fn = '{}/csv_test.methods,{}/csv_test.tests'.format(data_dir, data_dir)
+        # test_fn = '{}/csv_test.methods,{}/csv_test.tests'.format(data_dir, data_dir)
+
+        # data_dir = '{}/{}'.format(data_root, "test_gen/")
+        # train_fn = '{}/cli_train.methods,{}/cli_train.tests'.format(data_dir, data_dir)
+        # dev_fn = '{}/cli_test.methods,{}/cli_test.tests'.format(data_dir, data_dir)
+        # test_fn = '{}/cli_test.methods,{}/cli_test.tests'.format(data_dir, data_dir)
+
+        # data_dir = '{}/{}'.format(data_root, "test_gen/")
+        # train_fn = '{}/lang3_train.methods,{}/lang3_train.tests'.format(data_dir, data_dir)
+        # dev_fn = '{}/lang3_test.methods,{}/lang3_test.tests'.format(data_dir, data_dir)
+        # test_fn = '{}/lang3_test.methods,{}/lang3_test.tests'.format(data_dir, data_dir)
+
+        # data_dir = '{}/{}'.format(data_root, "test_gen/")
+        # train_fn = '{}/chart_train.methods,{}/chart_train.tests'.format(data_dir, data_dir)
+        # dev_fn = '{}/chart_test.methods,{}/chart_test.tests'.format(data_dir, data_dir)
+        # test_fn = '{}/chart_test.methods,{}/chart_test.tests'.format(data_dir, data_dir)
+
+        # data_dir = '{}/{}'.format(data_root, "test_gen/")
+        # train_fn = '{}/time_train.methods,{}/time_train.tests'.format(data_dir, data_dir)
+        # dev_fn = '{}/time_test.methods,{}/time_test.tests'.format(data_dir, data_dir)
+        # test_fn = '{}/time_test.methods,{}/time_test.tests'.format(data_dir, data_dir)
+
         data_dir = '{}/{}'.format(data_root, "test_gen/")
-        train_fn = '{}/cli_train.methods,{}/cli_train.tests'.format(data_dir, data_dir)
-        dev_fn = '{}/cli_test.methods,{}/cli_test.tests'.format(data_dir, data_dir)
-        test_fn = '{}/cli_test.methods,{}/cli_test.tests'.format(data_dir, data_dir)
+        train_fn = '{}/closure_train.methods,{}/closure_train.tests'.format(data_dir, data_dir)
+        dev_fn = '{}/closure_test.methods,{}/closure_test.tests'.format(data_dir, data_dir)
+        test_fn = '{}/closure_test.methods,{}/closure_test.tests'.format(data_dir, data_dir)
 
         # data_dir = '{}/{}'.format(data_root, "methods2test/corpus/raw/fm_fc_ms_ff")
         # train_fn = '{}/train/input.methods.txt,{}/train/output.tests.txt'.format(data_dir, data_dir)
