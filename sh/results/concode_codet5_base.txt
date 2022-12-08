@@ -10,3 +10,21 @@
 [best-bleu] bleu-4: 10.18, em: 2.3110, codebleu: 30.2089
 [Time: 50m] ./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin
 [best-bleu] bleu-4: 0.08, em: 0.0000, codebleu: 6.7895
+[Time: 8m] ./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 0.50, em: 0.0000, codebleu: 5.5357
+[Time: 1m] ./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 4.80, em: 0.0000, codebleu: 13.4588
+[Time: 3m] ./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 1.05, em: 0.0000, codebleu: 7.8725
+[Time: 8m] ./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 0.50, em: 0.0000, codebleu: 5.5367
+[Time: 47m] ./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 0.75, em: 0.0000, codebleu: 6.1633
+[Time: 51m] ./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 0.13, em: 0.0000, codebleu: 4.0028
+[Time: 1h53m] ./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 0.32, em: 0.0000, codebleu: 5.7772
+[Time: 2h24m] ./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 0.40, em: 0.0000, codebleu: 5.1895
+[Time: 2h27m] ./saved_models/concode/codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:10:54/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 9.01, em: 3.2771, codebleu: 23.6943

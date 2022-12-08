@@ -379,7 +379,8 @@ def main():
 
         for criteria in ['best-bleu']:
             # file = os.path.join(args.output_dir, 'checkpoint-{}/pytorch_model.bin'.format(criteria))
-            file = "./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin"
+            file = "./saved_models/concode/closure_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:16:03/checkpoint-best-bleu/pytorch_model.bin"
             logger.info("Reload model from {}".format(file))
             model.module.load_state_dict(torch.load(file)) if hasattr(model, 'module') else model.load_state_dict(torch.load(file))
             eval_examples, eval_data = load_and_cache_gen_data(args, args.test_filename, pool, tokenizer, 'test',
