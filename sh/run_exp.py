@@ -77,7 +77,7 @@ def get_args_by_task_model(task, sub_task, model_tag):
         elif task == 'clone':
             bs = 25
     elif 'codet5_large' in model_tag:
-        bs = 4
+        bs = 2
     else:
         bs = 4
         if task == 'translate':
