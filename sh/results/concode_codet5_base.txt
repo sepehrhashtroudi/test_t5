@@ -32,3 +32,11 @@
 [best-bleu] bleu-4: 9.20, em: 0.0000, codebleu: 27.2171
 [Time: 4h58m] ./saved_models/concode/closure_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:16:03/checkpoint-best-bleu/pytorch_model.bin
 [best-bleu] bleu-4: 9.20, em: 0.0000, codebleu: 27.2188
+[Time: 2h36m] ./saved_models/concode/lang_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:10:54/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 10.03, em: 3.9135, codebleu: 24.7475
+[Time: 7h45m] ./saved_models/concode/chart_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:03:59/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 17.90, em: 1.0506, codebleu: 33.1629
+[Time: 2m] ./saved_models/concode/csv_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:22:50/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 30.94, em: 0.0000, codebleu: 44.3102
+[Time: 27m] ./saved_models/concode/codec_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:24:15/checkpoint-best-bleu/pytorch_model.bin
+[best-bleu] bleu-4: 3.53, em: 0.0000, codebleu: 16.8806

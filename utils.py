@@ -182,6 +182,33 @@ def get_filenames(data_root, task, sub_task, split=''):
         # dev_fn = '{}/csv_test.methods,{}/csv_test.tests'.format(data_dir, data_dir)
         # test_fn = '{}/csv_test.methods,{}/csv_test.tests'.format(data_dir, data_dir)
 
+        
+
+        data_dir = '{}/{}'.format(data_root, "test_gen/")
+        train_fn = '{}/jacksonDatabind_train_0.methods,{}/jacksonDatabind_train_0.tests'.format(data_dir, data_dir)
+        dev_fn = '{}/jacksonDatabind_test_0.methods,{}/jacksonDatabind_test_0.tests'.format(data_dir, data_dir)
+        test_fn = '{}/jacksonDatabind_test_0.methods,{}/jacksonDatabind_test_0.tests'.format(data_dir, data_dir)
+
+        # data_dir = '{}/{}'.format(data_root, "test_gen/")
+        # train_fn = '{}/jacksonDatabind_train_1.methods,{}/jacksonDatabind_train_1.tests'.format(data_dir, data_dir)
+        # dev_fn = '{}/jacksonDatabind_test_1.methods,{}/jacksonDatabind_test_1.tests'.format(data_dir, data_dir)
+        # test_fn = '{}/jacksonDatabind_test_1.methods,{}/jacksonDatabind_test_1.tests'.format(data_dir, data_dir)
+
+        # data_dir = '{}/{}'.format(data_root, "test_gen/")
+        # train_fn = '{}/jacksonDatabind_train_2.methods,{}/jacksonDatabind_train_2.tests'.format(data_dir, data_dir)
+        # dev_fn = '{}/jacksonDatabind_test_2.methods,{}/jacksonDatabind_test_2.tests'.format(data_dir, data_dir)
+        # test_fn = '{}/jacksonDatabind_test_2.methods,{}/jacksonDatabind_test_2.tests'.format(data_dir, data_dir)
+
+        # data_dir = '{}/{}'.format(data_root, "test_gen/")
+        # train_fn = '{}/jacksonDatabind_train_3.methods,{}/jacksonDatabind_train_3.tests'.format(data_dir, data_dir)
+        # dev_fn = '{}/jacksonDatabind_test_3.methods,{}/jacksonDatabind_test_3.tests'.format(data_dir, data_dir)
+        # test_fn = '{}/jacksonDatabind_test_3.methods,{}/jacksonDatabind_test_3.tests'.format(data_dir, data_dir)
+
+        # data_dir = '{}/{}'.format(data_root, "test_gen/")
+        # train_fn = '{}/jacksonDatabind_train_4.methods,{}/jacksonDatabind_train_4.tests'.format(data_dir, data_dir)
+        # dev_fn = '{}/jacksonDatabind_test_4.methods,{}/jacksonDatabind_test_4.tests'.format(data_dir, data_dir)
+        # test_fn = '{}/jacksonDatabind_test_4.methods,{}/jacksonDatabind_test_4.tests'.format(data_dir, data_dir)
+
         # data_dir = '{}/{}'.format(data_root, "test_gen/")
         # train_fn = '{}/cli_train.methods,{}/cli_train.tests'.format(data_dir, data_dir)
         # dev_fn = '{}/cli_test.methods,{}/cli_test.tests'.format(data_dir, data_dir)
@@ -202,10 +229,10 @@ def get_filenames(data_root, task, sub_task, split=''):
         # dev_fn = '{}/time_test.methods,{}/time_test.tests'.format(data_dir, data_dir)
         # test_fn = '{}/time_test.methods,{}/time_test.tests'.format(data_dir, data_dir)
 
-        data_dir = '{}/{}'.format(data_root, "test_gen/")
-        train_fn = '{}/closure_train.methods,{}/closure_train.tests'.format(data_dir, data_dir)
-        dev_fn = '{}/closure_test.methods,{}/closure_test.tests'.format(data_dir, data_dir)
-        test_fn = '{}/closure_test.methods,{}/closure_test.tests'.format(data_dir, data_dir)
+        # data_dir = '{}/{}'.format(data_root, "test_gen/")
+        # train_fn = '{}/closure_train.methods,{}/closure_train.tests'.format(data_dir, data_dir)
+        # dev_fn = '{}/closure_test.methods,{}/closure_test.tests'.format(data_dir, data_dir)
+        # test_fn = '{}/closure_test.methods,{}/closure_test.tests'.format(data_dir, data_dir)
 
         # data_dir = '{}/{}'.format(data_root, "methods2test/corpus/raw/fm_fc_ms_ff")
         # train_fn = '{}/train/input.methods.txt,{}/train/output.tests.txt'.format(data_dir, data_dir)

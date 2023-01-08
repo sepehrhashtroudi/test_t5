@@ -54,7 +54,7 @@ def get_args_by_task_model(task, sub_task, model_tag):
         src_len = 500
         trg_len = 500
         epoch = 20
-        patience = 3
+        patience = 5
     elif task == 'defect':
         # Read 21854 examples, avg src len: 187, avg trg len: 1, max src len: 12195, max trg len: 1
         # [TOKENIZE] avg src len: 597, avg trg len: 1, max src len: 41447, max trg len: 1

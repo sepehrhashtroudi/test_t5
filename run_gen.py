@@ -380,7 +380,13 @@ def main():
         for criteria in ['best-bleu']:
             # file = os.path.join(args.output_dir, 'checkpoint-{}/pytorch_model.bin'.format(criteria))
             # file = "./saved_models/concode/tufano_codet5_base_all_lr10_bs12_src320_trg150_pat3_e20_date:2022-10-21/checkpoint-best-bleu/pytorch_model.bin"
-            file = "./saved_models/concode/closure_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:16:03/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/closure_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:16:03/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/lang_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:10:54/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/time_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_02:53:32/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/chart_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:03:59/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/codec_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:24:15/checkpoint-best-bleu/pytorch_model.bin"
+            file = "./saved_models/concode/csv_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:22:50/checkpoint-best-bleu/pytorch_model.bin"
+            
             logger.info("Reload model from {}".format(file))
             model.module.load_state_dict(torch.load(file)) if hasattr(model, 'module') else model.load_state_dict(torch.load(file))
             eval_examples, eval_data = load_and_cache_gen_data(args, args.test_filename, pool, tokenizer, 'test',
