@@ -385,8 +385,30 @@ def main():
             # file = "./saved_models/concode/time_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_02:53:32/checkpoint-best-bleu/pytorch_model.bin"
             # file = "./saved_models/concode/chart_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:03:59/checkpoint-best-bleu/pytorch_model.bin"
             # file = "./saved_models/concode/codec_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:24:15/checkpoint-best-bleu/pytorch_model.bin"
-            file = "./saved_models/concode/csv_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:22:50/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/csv_codet5_base_all_lr10_bs4_src500_trg500_05-12-2022_03:22:50/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/compress_3_codet5_base_all_lr10_bs4_src500_trg500_09-01-2023_23:56:28/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/jacksonDatabind_4_codet5_base_all_lr10_bs4_src500_trg500_09-01-2023_03:56:44/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/gson_2_codet5_base_all_lr10_bs4_src500_trg500_09-01-2023_17:05:29/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/jacksonCore_2_codet5_base_all_lr10_bs4_src500_trg500_10-01-2023_13:58:43/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/jacksonDatabind_0_codet5_base_all_lr10_bs4_src500_trg500_07-01-2023_22:19:11/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/jacksonDatabind_3_codet5_base_all_lr10_bs4_src500_trg500_08-01-2023_02:04:37/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/jsoup_2_codet5_base_all_lr10_bs4_src500_trg500_09-01-2023_23:43:44/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/compress_0_codet5_base_all_lr10_bs4_src500_trg500_15-01-2023_06:20:47/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/chart_1_train/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/jacksonCore_train_4/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/jsoup_train_0/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/jsoup_train_1/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/jxPath_train_3/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/gson_train_0/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/compress_train_4/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/time_train_1/checkpoint-best-bleu/pytorch_model.bin"
+            # file = "./saved_models/concode/lang3_train_1/checkpoint-best-bleu/pytorch_model.bin"
+            file = "./saved_models/concode/closure_train_1/checkpoint-best-bleu/pytorch_model.bin"
             
+            
+            
+            
+
             logger.info("Reload model from {}".format(file))
             model.module.load_state_dict(torch.load(file)) if hasattr(model, 'module') else model.load_state_dict(torch.load(file))
             eval_examples, eval_data = load_and_cache_gen_data(args, args.test_filename, pool, tokenizer, 'test',
